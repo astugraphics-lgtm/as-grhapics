@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>AS Graphics | Epoxy & Wall Decor</title>
+  <meta name="description" content="AS Graphics | Epoxy & Wall Decor — Creative graphic design, custom wall art and epoxy décor.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #111;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.92);
+      padding: 15px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .logo span {
+      color: #d4af37;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #d4af37;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 7% 70px;
+      background:
+        linear-gradient(rgba(0,0,0,.72), rgba(0,0,0,.8)),
+        url("images/hero.jpg") center/cover no-repeat;
+    }
+
+    .hero-content {
+      max-width: 700px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 7vw, 75px);
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #d4af37;
+    }
+
+    .hero p {
+      font-size: 19px;
+      color: #ddd;
+      margin-bottom: 30px;
+      max-width: 600px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 25px;
+      margin-right: 10px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: .3s;
+    }
+
+    .btn-primary {
+      background: #d4af37;
+      color: #111;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      border: 1px solid #d4af37;
+      color: #fff;
+    }
+
+    .btn-outline:hover {
+      background: #d4af37;
+      color: #111;
+    }
+
+    /* GENERAL */
+    section {
+      padding: 80px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+
+    .section-title span {
+      color: #d4af37;
+    }
+
+    .section-title p {
+      color: #aaa;
+    }
+
+    /* SERVICES */
+    .services {
+      background: #181818;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .service-card {
+      background: #222;
+      padding: 35px;
+      border-radius: 15px;
+      border: 1px solid #333;
+      transition: .3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-7px);
+      border-color: #d4af37;
+    }
+
+    .service-icon {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .service-card h3 {
+      font-size: 23px;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: #aaa;
+    }
+
+    /* ABOUT */
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-image {
+      min-height: 400px;
+      border-radius: 20px;
+      background:
+        linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)),
+        url("images/about.jpg") center/cover no-repeat;
+    }
+
+    .about-text h2 {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    .about-text h2 span {
+      color: #d4af37;
+    }
+
+    .about-text p {
+      color: #bbb;
+      margin-bottom: 15px;
+    }
+
+    /* GALLERY */
+    .gallery {
+      background: #181818;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .gallery-item {
+      height: 260px;
+      overflow: hidden;
+      border-radius: 12px;
+      background: #252525;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: .4s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    /* CONTACT */
+    .contact {
+      text-align: center;
+    }
+
+    .contact-box {
+      max-width: 700px;
+      margin: auto;
+      background: #1d1d1d;
+      padding: 45px 25px;
+      border-radius: 20px;
+      border: 1px solid #333;
+    }
+
+    .contact-box h2 {
+      font-size: 35px;
+      margin-bottom: 15px;
+    }
+
+    .contact-box p {
+      color: #aaa;
+      margin-bottom: 25px;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #080808;
+      color: #888;
+    }
+
+    footer span {
+      color: #d4af37;
+    }
+
+    /* WHATSAPP */
+    .whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #25D366;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      font-size: 28px;
+      box-shadow: 0 5px 20px rgba(0,0,0,.4);
+      z-index: 999;
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+
+      nav {
+        padding: 15px 5%;
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      .hero {
+        padding: 120px 6% 70px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      section {
+        padding: 65px 6%;
+      }
+
+      .service-grid,
+      .about,
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-item {
+        height: 300px;
+      }
+
+      .about-image {
+        min-height: 300px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="logo">AS <span>Graphics</span></div>
+
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+
+      <h1>
+        Creativity Meets
+        <span>Design.</span>
+      </h1>
+
+      <p>
+        Welcome to AS Graphics | Epoxy & Wall Decor.
+        We create unique graphic designs, custom wall art,
+        epoxy décor and creative visual solutions.
+      </p>
+
+      <a href="#services" class="btn btn-primary">
+        Explore Services
+      </a>
+
+      <a href="#contact" class="btn btn-outline">
+        Contact Us
+      </a>
+
+    </div>
+  </section>
+
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+
+    <div class="section-title">
+      <h2>Our <span>Services</span></h2>
+      <p>Creative solutions made with passion.</p>
+    </div>
+
+    <div class="service-grid">
+
+      <div class="service-card">
+        <div class="service-icon">🎨</div>
+        <h3>Graphic Design</h3>
+        <p>
+          Logo design, posters, flyers, social media designs,
+          business cards and custom graphics.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">✨</div>
+        <h3>Epoxy Art</h3>
+        <p>
+          Beautiful custom epoxy designs for homes,
+          offices and special spaces.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🖼️</div>
+        <h3>Wall Decor</h3>
+        <p>
+          Modern wall art and decorative pieces designed
+          to make your space unique.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">💡</div>
+        <h3>Custom Projects</h3>
+        <p>
+          Have your own idea? Tell us what you want and
+          we'll help turn your idea into reality.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ABOUT -->
+  <section id="about">
+
+    <div class="about">
+
+      <div class="about-image"></div>
+
+      <div class="about-text">
+
+        <h2>About <span>AS Graphics</span></h2>
+
+        <p>
+          AS Graphics | Epoxy & Wall Decor is a creative
+          brand focused on bringing beautiful ideas to life.
+        </p>
+
+        <p>
+          From digital graphic design to physical wall décor,
+          every project is created with attention to detail,
+          creativity and quality.
+        </p>
+
+        <p>
+          Whether you need a professional logo or a unique
+          piece of wall art, we're here to create something
+          special for you.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery">
+
+    <div class="section-title">
+      <h2>Our <span>Work</span></h2>
+      <p>Some of our latest creative projects.</p>
+    </div>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-item">
+        <img src="images/work1.jpg" alt="Graphic Design Work">
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/work2.jpg" alt="Epoxy Wall Decor">
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/work3.jpg" alt="Custom Wall Art">
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/work4.jpg" alt="Logo Design">
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/work5.jpg" alt="Epoxy Art">
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/work6.jpg" alt="Creative Design">
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+
+    <div class="contact-box">
+
+      <h2>Let's Create Something <span>Beautiful</span></h2>
+
+      <p>
+        Have a project in mind?
+        Contact AS Graphics today.
+        
+      </p>
+
+      <!-- CHANGE THE NUMBER BELOW -->
+      <a
+        href="https://wa.me/251900000000"
+        class="btn btn-primary"
+        target="_blank">
+        💬 WhatsApp Us
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 <span>AS Graphics | Epoxy & Wall Decor</span>.
+    All Rights Reserved.
+  </footer>
+
+
+  <!-- FLOATING WHATSAPP -->
+  <a
+  <!-- CONTACT -->
+<section class="contact" id="contact">
+
+  <div class="contact-box">
+
+    <h2>Let's Create Something <span>Beautiful</span></h2>
+
+    <p>
+      Have a project in mind?
+      Contact AS Graphics today.
+    </p>
+
+    <p>📞 Phone: 0954128966</p>
+    <p>💬 Telegram: @astuy15</p>
+    <p>📸 Instagram: sip___h</p>
+    <p>🎵 TikTok: as_epoxy</p>
+
+    <br>
+
+    <a
+      href="https://wa.me/251954128966"
+      class="btn btn-primary"
+      target="_blank">
+      💬 WhatsApp Us
+    </a>
+
+  </div>
+
+</section>
+    class="whatsapp"
+    target="_blank"
+    aria-label="Contact us on WhatsApp">
+    💬
+  </a>
+
+</body>
+</html>
